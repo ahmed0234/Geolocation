@@ -1,7 +1,9 @@
 import prisma from "@/lib/prisma";
+import { headers } from "next/headers";
 import Link from "next/link";
 
 const AdminPage = async () => {
+  await headers();
   // Fetch locations from database
   const locations = await prisma.locations.findMany({
     orderBy: {
